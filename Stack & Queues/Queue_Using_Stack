@@ -1,11 +1,25 @@
+// LeetCode 232 - Implement Queue using Stacks
+// Simulate a FIFO queue using two LIFO stacks.
+// Time Complexity: push O(1), pop/peek amortized O(1)
+// Space Complexity: O(n)
+
+#include <iostream>
+#include <stack>
+using namespace std;
+
 class MyQueue {
 public:
     stack<int> s1, s2;
+    // s1: inbox  - accepts all new pushes
+    // s2: outbox - serves pop/peek in correct FIFO order
 
+    // Always push to inbox
     void push(int x) {
         s1.push(x);
     }
 
+    // Pour inbox into outbox (only when outbox is empty) to reverse order,
+    // then pop from outbox — gives the oldest element first
     int pop() {
         if (s2.empty()) {
             while (!s1.empty()) {
@@ -18,6 +32,7 @@ public:
         return val;
     }
 
+    // Same lazy transfer as pop, but don't remove the element
     int peek() {
         if (s2.empty()) {
             while (!s1.empty()) {
@@ -28,7 +43,19 @@ public:
         return s2.top();
     }
 
+    // Queue is empty only when both stacks are empty
     bool empty() {
         return s1.empty() && s2.empty();
     }
 };
+
+int main() {
+    MyQueue q;
+    q.push(1);
+    q.push(2);
+    cout << "Peek: " << q.peek() << endl; // 1
+    cout << "Pop: "  << q.pop()  << endl; // 1
+    cout << "Empty: " << q.empty()        // false
+         << endl;
+    return 0;
+}
