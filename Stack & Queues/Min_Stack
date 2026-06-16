@@ -1,7 +1,8 @@
-// LeetCode 155 - Min Stack
+// LeetCode 155 - Min Stack 
 // Design a stack that supports push, pop, top, and retrieving the minimum element in constant time.
 // Time Complexity: O(1) for all operations
 // Space Complexity: O(n)
+// Samundra Aryal
 
 #include <iostream>
 #include <stack>
