@@ -1,3 +1,7 @@
+// LC 102: Binary Tree Level Order Traversal
+// https://leetcode.com/problems/binary-tree-level-order-traversal/
+// Approach: BFS, group nodes by level using queue size as level boundary
+
 #include <iostream>
 #include <vector>
 #include <queue>
