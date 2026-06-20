@@ -1,6 +1,6 @@
 // LC 200 - Number of Islands
-// https://leetcode.com/problems/number-of-islands/
-//
+
+
 // Given an m x n 2D binary grid representing a map of '1' (land) and '0' (water),
 // return the number of islands. An island is surrounded by water and formed by
 // connecting adjacent lands horizontally or vertically.
