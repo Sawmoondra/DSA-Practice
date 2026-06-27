@@ -1,3 +1,11 @@
+/*
+ * LC 21 - Merge Two Sorted Lists
+ * Approach: Iterative with dummy node
+ * - Use a dummy head to simplify edge cases
+ * - Compare nodes from both lists, attach the smaller one
+ * - Append the remaining list at the end
+ * Time: O(n + m) | Space: O(1)
+ */
 #include <bits/stdc++.h>
 using namespace std;
 
